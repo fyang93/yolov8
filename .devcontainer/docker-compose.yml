@@ -1,0 +1,22 @@
+version: '3'
+services:
+  dev:
+    build:
+      context: .
+      args:
+        - USERNAME=yf
+        - USER_UID=1024
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ipc: host
+    volumes:
+      - /home/yf/workspace/yolov8:/usr/src/ultralytics
+      - /home/yf/data:/data
+    ports:
+      - 7860:7860 # port forward for gradio
+    command: /bin/sh -c "while sleep 1000; do :; done"

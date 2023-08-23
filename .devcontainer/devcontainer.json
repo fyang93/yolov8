@@ -1,0 +1,8 @@
+{
+  "name": "yolo",
+  "dockerComposeFile": ["./docker-compose.yml"],
+  "service": "dev",
+  "workspaceFolder": "/usr/src/ultralytics",
+  "extensions": ["ms-python.python","ms-python.vscode-pylance","christian-kohler.path-intellisense"],
+  "shutdownAction": "none",
+}
